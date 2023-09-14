@@ -83,7 +83,7 @@ export const usePosts = (message: string) => {
     };
 
     filterPosts();
-  }, [searchUsername, users]);
+  }, [searchUsername, posts, users]);
 
   const handleClick = (postId: number) => {
     navigate(`/post/${postId}`);
