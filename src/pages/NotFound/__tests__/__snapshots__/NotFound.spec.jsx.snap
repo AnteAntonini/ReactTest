@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test snapshot Component should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="wrapper"
+  >
+    <h2>
+      404 | Sorry, we can't find that page.
+    </h2>
+    <div
+      class="row "
+    >
+      <button>
+        Home Page
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
