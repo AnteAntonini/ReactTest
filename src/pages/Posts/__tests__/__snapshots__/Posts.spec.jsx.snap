@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test snapshot Component should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="flex-col-center"
+  >
+    <h1
+      class="page-title"
+    >
+      Posts
+    </h1>
+    <div
+      class="row"
+    >
+      <input
+        class="search"
+        data-testid="search-input"
+        placeholder="Search..."
+        type="text"
+      />
+    </div>
+    <div
+      class="post-section post-hover"
+    >
+      <div
+        class="post-title"
+      >
+        Sample Post 1
+      </div>
+      <span
+        class="post-username"
+      >
+        User1
+      </span>
+      <hr />
+      <div>
+        <h3
+          class="comment-title"
+        >
+           0 Comments
+        </h3>
+      </div>
+    </div>
+    <div
+      class="post-section post-hover"
+    >
+      <div
+        class="post-title"
+      >
+        Sample Post 2
+      </div>
+      <span
+        class="post-username"
+      >
+        User2
+      </span>
+      <hr />
+      <div>
+        <h3
+          class="comment-title"
+        >
+           0 Comments
+        </h3>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
