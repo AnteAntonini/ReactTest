@@ -11,8 +11,6 @@ export const usePosts = (message: string) => {
   const [searchUsername, setSearchUsername] = useState("");
   const navigate = useNavigate();
 
-  let commentsByPostId: TPostsCommentsResponse[][] = [];
-
   useEffect(() => {
     console.log(`${message} Posts`);
   }, []);
@@ -28,14 +26,12 @@ export const usePosts = (message: string) => {
     "https://demo.martian.services/api/posts"
   );
 
-  comments &&
-    comments.forEach((comment) => {
-      const postId = comment.postId;
-      if (!commentsByPostId[postId]) {
-        commentsByPostId[postId] = [];
-      }
-      commentsByPostId[postId].push(comment);
-    });
+  const commentsByPostId = comments.reduce((acc, comment) => {
+    const postId = comment.postId;
+    acc[postId] = acc[postId] || [];
+    acc[postId].push(comment);
+    return acc;
+  }, [] as TPostsCommentsResponse[][]);
 
   const PostsWithComentsAndUsers =
     posts &&
