@@ -1,0 +1,61 @@
+.post-section {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  max-width: 800px;
+  padding: 2rem 2.5rem;
+  margin: 1rem 0;
+  background-color: var(--color-martian-lightgray);
+  border-radius: 4px;
+}
+
+.post-title {
+  padding-bottom: 2rem;
+  color: var(--color-martian-dark);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.post-body {
+  font-size: 0.875rem;
+  color: var(--color-martian-darkgray);
+  padding-bottom: 1.5rem;
+}
+
+.post-username {
+  align-self: flex-end;
+  color: var(--color-martian-darkgray);
+  padding: 0.875rem 0;
+}
+
+.post-hover:hover {
+  cursor: pointer;
+  box-shadow: inset 3px 0 var(--color-martian-red);
+}
+
+.comment {
+  padding: 1.5rem 0;
+  font-size: 0.875rem;
+  border-bottom: thin solid var(--color-martian-gray);
+}
+
+.comment:last-child {
+  border: none;
+}
+
+.comment-title {
+  padding: 1rem 0;
+  color: var(--color-martian-dark);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.comment-name {
+  color: var(--color-martian-dark);
+  font-weight: 600;
+}
+
+.comment-body {
+  padding-top: 1.5rem;
+  color: var(--color-martian-darkgray);
+}

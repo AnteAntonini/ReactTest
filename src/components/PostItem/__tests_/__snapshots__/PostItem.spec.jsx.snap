@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test snapshot Component should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="post-section undefined"
+  >
+    <div
+      class="post-title"
+    >
+      Sample Post
+    </div>
+    <div
+      class="post-body"
+    >
+      This is the post body.
+    </div>
+    <span
+      class="post-username"
+    >
+      User123
+    </span>
+    <hr />
+    <div>
+      <h3
+        class="comment-title"
+      >
+         1 Comments
+      </h3>
+      <div
+        class="comments"
+      >
+        <div
+          class="comment-email"
+        >
+          user@example.com
+        </div>
+        <div
+          class="comment-name"
+        >
+          User
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
