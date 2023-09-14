@@ -37,7 +37,7 @@ export const usePosts = (message: string) => {
       commentsByPostId[postId].push(comment);
     });
 
-  const mergedPosts =
+  const PostsWithComentsAndUsers =
     posts &&
     posts.map((post) => {
       const postId = post && post.id;
@@ -56,26 +56,34 @@ export const usePosts = (message: string) => {
       });
     });
 
+  const findUserByName = (username: string) => {
+    return users.find((user) =>
+      user.name.toLowerCase().includes(username.toLowerCase())
+    );
+  };
+
   useEffect(() => {
-    const originalPosts = mergedPosts && [...mergedPosts];
+    const filterPosts = () => {
+      const originalPosts = PostsWithComentsAndUsers || [];
 
-    if (searchUsername.trim() === "") {
-      setFilteredPosts(originalPosts);
-    } else {
-      const matchedUser = users.find((user) =>
-        user.name.toLowerCase().includes(searchUsername.toLowerCase())
-      );
-
-      if (matchedUser) {
-        const matchedPosts = originalPosts.filter(
-          (post: TPostsWithComentsAndUsers) => post.userId === matchedUser.id
-        );
-        setFilteredPosts(matchedPosts);
+      if (searchUsername.trim() === "") {
+        setFilteredPosts(originalPosts);
       } else {
-        setFilteredPosts([]);
+        const matchedUser = findUserByName(searchUsername);
+
+        if (matchedUser) {
+          const matchedPosts = originalPosts.filter(
+            (post) => post.userId === matchedUser.id
+          );
+          setFilteredPosts(matchedPosts);
+        } else {
+          setFilteredPosts([]);
+        }
       }
-    }
-  }, [searchUsername, posts, users]);
+    };
+
+    filterPosts();
+  }, [searchUsername, users]);
 
   const handleClick = (postId: number) => {
     navigate(`/post/${postId}`);
