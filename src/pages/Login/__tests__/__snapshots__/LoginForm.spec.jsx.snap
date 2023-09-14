@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test snapshot Component should match snapshot 1`] = `
+<DocumentFragment>
+  <form
+    autocomplete="off"
+    class="login-form"
+  >
+    <h2
+      class="header-title"
+    >
+      Login
+    </h2>
+    <div>
+      <div
+        class="error"
+      />
+      <div
+        class="row"
+      >
+        <label>
+          Email
+        </label>
+        <input
+          autocomplete="off"
+          name="email"
+          placeholder="Enter your email"
+          type="email"
+        />
+      </div>
+      <div
+        class="row"
+      >
+        <label>
+          Password
+        </label>
+        <input
+          autocomplete="new-password"
+          name="password"
+          placeholder="Enter your password"
+          type="password"
+        />
+      </div>
+      <div
+        class="button row"
+      >
+        <button
+          type="submit"
+        >
+          Log In
+        </button>
+      </div>
+    </div>
+  </form>
+</DocumentFragment>
+`;
