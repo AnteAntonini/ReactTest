@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test snapshot Component should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="row"
+  >
+    <input
+      class="search"
+      data-testid="search-input"
+      placeholder="Enter your search query"
+      type="text"
+    />
+  </div>
+</DocumentFragment>
+`;
