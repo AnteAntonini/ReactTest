@@ -4,7 +4,7 @@ import {
   Routes,
   Navigate,
 } from "react-router-dom";
-import { Suspense } from "react";
+import { Suspense, useContext } from "react";
 import "./styles/colors.css";
 import "./styles/global.css";
 import { LoginForm } from "./pages/Login";
@@ -12,9 +12,10 @@ import { Posts } from "./pages/Posts";
 import { PostDetails } from "./pages/PostDetails";
 import LoadingSpinner from "./components/LoadingSpinner/LoadingSpinner";
 import NotFound from "./pages/NotFound/NotFound";
+import { AuthContext } from "./context/AuthContext";
 
 function App() {
-  const isLoggedIn = sessionStorage.getItem("isLoggedIn") === "true";
+  const { isAuth } = useContext(AuthContext);
 
   return (
     <div className="App">
@@ -28,17 +29,13 @@ function App() {
             <Route
               path="/app"
               element={
-                isLoggedIn ? (
-                  <Posts message="Hello from" />
-                ) : (
-                  <Navigate to="/" />
-                )
+                isAuth ? <Posts message="Hello from" /> : <Navigate to="/" />
               }
             ></Route>
             <Route
               path="/post/:id"
               element={
-                isLoggedIn ? (
+                isAuth ? (
                   <PostDetails message="Hello from" />
                 ) : (
                   <Navigate to="/" />

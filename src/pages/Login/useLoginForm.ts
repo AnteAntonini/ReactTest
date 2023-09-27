@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../context/AuthContext";
 
 export const useLoginForm = (message: string) => {
   const navigate = useNavigate();
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const { setIsAuth } = useContext(AuthContext);
   const [errorMessages, setErrorMessages] = useState("");
   const [user, setUser] = useState({
     email: "",
@@ -44,8 +45,8 @@ export const useLoginForm = (message: string) => {
       if (userData.password !== user.password) {
         setErrorMessages(errorMessage);
       } else {
-        setIsLoggedIn(true);
         sessionStorage.setItem("isLoggedIn", "true");
+        setIsAuth(sessionStorage.getItem("isLoggedIn") === "true");
         navigate("/app");
       }
     } else {
