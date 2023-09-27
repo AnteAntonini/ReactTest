@@ -16,6 +16,7 @@ import { AuthContext } from "./context/AuthContext";
 
 function App() {
   const { isAuth } = useContext(AuthContext);
+  const isLoggedIn = sessionStorage.getItem("isLoggedIn") === "true";
 
   return (
     <div className="App">
@@ -29,13 +30,17 @@ function App() {
             <Route
               path="/app"
               element={
-                isAuth ? <Posts message="Hello from" /> : <Navigate to="/" />
+                isAuth || isLoggedIn ? (
+                  <Posts message="Hello from" />
+                ) : (
+                  <Navigate to="/" />
+                )
               }
             ></Route>
             <Route
               path="/post/:id"
               element={
-                isAuth ? (
+                isAuth || isLoggedIn ? (
                   <PostDetails message="Hello from" />
                 ) : (
                   <Navigate to="/" />

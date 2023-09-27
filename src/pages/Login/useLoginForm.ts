@@ -46,7 +46,7 @@ export const useLoginForm = (message: string) => {
         setErrorMessages(errorMessage);
       } else {
         sessionStorage.setItem("isLoggedIn", "true");
-        setIsAuth(sessionStorage.getItem("isLoggedIn") === "true");
+        setIsAuth(true);
         navigate("/app");
       }
     } else {
