@@ -1,10 +1,9 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../../context/AuthContext";
 
 export const useLoginForm = (message: string) => {
   const navigate = useNavigate();
-  const { setIsAuth } = useContext(AuthContext);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [errorMessages, setErrorMessages] = useState("");
   const [user, setUser] = useState({
     email: "",
@@ -45,7 +44,8 @@ export const useLoginForm = (message: string) => {
       if (userData.password !== user.password) {
         setErrorMessages(errorMessage);
       } else {
-        setIsAuth(true);
+        setIsLoggedIn(true);
+        sessionStorage.setItem("isLoggedIn", "true");
         navigate("/app");
       }
     } else {
