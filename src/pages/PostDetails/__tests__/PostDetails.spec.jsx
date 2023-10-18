@@ -23,7 +23,7 @@ describe("PostDetails Component", () => {
           body: "This is a comment",
         },
       ],
-      username: "User123",
+      userName: "User123",
     });
 
     render(
@@ -50,7 +50,7 @@ describe("PostDetails Component", () => {
         body: "This post has no comments.",
       },
       comments: [],
-      username: "User456",
+      userName: "User456",
     });
 
     render(
@@ -79,7 +79,7 @@ describe("Test snapshot", () => {
         body: "This post has no comments.",
       },
       comments: [],
-      username: "User456",
+      userName: "User456",
     });
 
     const { asFragment } = render(

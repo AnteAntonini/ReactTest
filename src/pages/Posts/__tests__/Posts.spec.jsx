@@ -62,7 +62,7 @@ describe("Posts Component", () => {
     fireEvent.click(postItem);
 
     // Verify that handleClick is called with the correct arguments
-    expect(mockHandleClick).toHaveBeenCalledWith(3, "User3");
+    expect(mockHandleClick).toHaveBeenCalledWith(3);
   });
 });
 

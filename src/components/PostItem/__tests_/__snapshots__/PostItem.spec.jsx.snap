@@ -28,7 +28,7 @@ exports[`Test snapshot Component should match snapshot 1`] = `
          1 Comments
       </h3>
       <div
-        class="comments"
+        class="comment"
       >
         <div
           class="comment-email"

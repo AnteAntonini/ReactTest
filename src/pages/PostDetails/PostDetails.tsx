@@ -16,7 +16,7 @@ const PostDetails = ({ message }: { message: string }) => {
           <ArrowLeft className="arrow-left" /> Go Back
         </Link>
       </div>
-      {post && (
+      {post && userName && comments && (
         <PostItem
           message="Hello from"
           id={post.id}

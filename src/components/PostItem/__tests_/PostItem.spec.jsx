@@ -7,7 +7,7 @@ describe("PostItem Component", () => {
       id: 1,
       postTitle: "Sample Post",
       postBody: "This is the post body.",
-      postUsername: "User123",
+      postUserName: "User123",
       comments: [
         {
           id: 1,
@@ -82,7 +82,7 @@ describe("Test snapshot", () => {
       id: 1,
       postTitle: "Sample Post",
       postBody: "This is the post body.",
-      postUsername: "User123",
+      postUserName: "User123",
       comments: [
         {
           id: 1,
