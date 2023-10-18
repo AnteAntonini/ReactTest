@@ -6,7 +6,9 @@ describe("LoadingSpinner Component", () => {
     const { container } = render(<LoadingSpinner />);
 
     // Check if the spinner container and loading spinner elements are present
-    const spinnerContainer = container.querySelector(".spinner-container");
+    const spinnerContainer = container.querySelector(
+      ".loading-spinner-wrapper"
+    );
     const loadingSpinner = container.querySelector(".loading-spinner");
 
     expect(spinnerContainer).toBeInTheDocument();
