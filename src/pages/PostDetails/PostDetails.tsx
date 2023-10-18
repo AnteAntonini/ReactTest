@@ -7,6 +7,8 @@ import "./postDetails.css";
 const PostDetails = ({ message }: { message: string }) => {
   const { post, comments, userName } = usePostDetails(message);
 
+  const renderPostItem = post && userName && comments;
+
   return (
     <div className="flex-col-center">
       <h1 className="page-title">Posts Details</h1>
@@ -16,7 +18,7 @@ const PostDetails = ({ message }: { message: string }) => {
           <ArrowLeft className="arrow-left" /> Go Back
         </Link>
       </div>
-      {post && userName && comments && (
+      {renderPostItem && (
         <PostItem
           message="Hello from"
           id={post.id}
